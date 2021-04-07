@@ -11,7 +11,7 @@ mailserver = 'smtp.gmail.com'
 mailport = 587
 
 # Create socket called clientSocket and establish a TCP connection with mailserver
-hostname='beng.7447@gmail.com'
+hostname='example@gmail.com'
 password='************'
 
 clientSocket=socket(AF_INET,SOCK_STREAM)
@@ -60,14 +60,14 @@ if p_rev[:3]!='235':
     print('235 reply not received from server.')
 
 # Send MAIL FROM command and print server response.
-sslclientSocket.send("Mail from:<beng.7447@gmail.com>\r\n".encode())
+sslclientSocket.send("Mail from:<example@gmail.com>\r\n".encode())
 recv1=sslclientSocket.recv(1024)
 print(recv1)
 if recv1[:3]!='250':
     print('250 reply not received from server.')
 
 # Send RCPT TO command and print server response.
-sslclientSocket.send('RCPT TO:<beng.7474@gmail.com>\r\n'.encode())
+sslclientSocket.send('RCPT TO:<example2@gmail.com>\r\n'.encode())
 recv1=sslclientSocket.recv(1024)
 print(recv1)
 if recv1[:3]!='250':
